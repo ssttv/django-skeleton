@@ -9,7 +9,7 @@ import Dashboard from "./leads/Dashboard";
 class App extends Component {
   render() {
     return (
-      <Provider>
+      <Provider store={store}>
         <Fragment>
           <Header />
           <div className="container">
