@@ -17,14 +17,16 @@ export class Leads extends Component {
   render() {
     return (
       <Fragment>
-        <h2>Leads List</h2>
+        <h2>Leads</h2>
         <table className="table table-striped">
           <thead>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Message</th>
-            <th />
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Message</th>
+              <th />
+            </tr>
           </thead>
           <tbody>
             {this.props.leads.map(lead => (
@@ -36,8 +38,9 @@ export class Leads extends Component {
                 <td>
                   <button
                     onClick={this.props.deleteLead.bind(this, lead.id)}
-                    className="btn btn-danger"
+                    className="btn btn-danger btn-sm"
                   >
+                    {" "}
                     Delete
                   </button>
                 </td>

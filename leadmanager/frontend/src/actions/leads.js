@@ -16,19 +16,6 @@ export const getLeads = () => dispatch => {
 };
 
 //DELETE_LEAD
-export const addLead = lead => dispatch => {
-  axios
-    .post(`/api/leads/`, lead)
-    .then(res => {
-      dispatch({
-        type: ADD_LEAD,
-        payload: res.data
-      });
-    })
-    .catch(err => console.log(err));
-};
-
-//ADD_LEAD
 export const deleteLead = id => dispatch => {
   axios
     .delete(`/api/leads/${id}/`)
@@ -39,4 +26,17 @@ export const deleteLead = id => dispatch => {
       });
     })
     .catch(err => console.log(err));
+};
+
+//ADD_LEAD
+export const addLead = lead => dispatch => {
+  axios
+    .post("/api/leads/", lead)
+    .then(res => {
+      dispatch({
+        type: ADD_LEAD,
+        payload: res.data
+      });
+    })
+    .catch(err => console.log(err.response));
 };
